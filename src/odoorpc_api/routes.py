@@ -1,4 +1,5 @@
 import importlib
+import sys
 from pathlib import Path
 
 
@@ -10,7 +11,11 @@ def handling_router(app):
     imports them as modules, and registers any found 'router' instances 
     to the main FastAPI application.
     """
-    routes_dir = Path(__file__).parent.parent / "routes"
+    user_project_dir = Path.cwd()
+    routes_dir = user_project_dir / "app" / "routes"
+
+    if str(user_project_dir) not in sys.path:
+        sys.path.append(str(user_project_dir))
 
     for route_file in routes_dir.rglob("*.py"):
         if route_file.name == "__init__.py":

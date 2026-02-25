@@ -1,15 +1,14 @@
-import os
 from pathlib import Path
 
 from uvicorn.config import LOGGING_CONFIG
 
 from odoorpc_api.settings import env
 
-BASE_DIR = Path(__file__).resolve().parent.parent
-LOG_FILE_PATH = os.path.join(BASE_DIR, "logs", "odooapi.log")
+ROOT_DIR = Path.cwd()
+LOG_FILE_PATH = ROOT_DIR / "logs" / "odooapi.log"
 
 if env.LOGFILE:
-    os.makedirs(os.path.dirname(LOG_FILE_PATH), exist_ok=True)
+    LOG_FILE_PATH.parent.mkdir(parents=True, exist_ok=True)
 
     LOGGING_CONFIG["formatters"]["myformat"] = {
         "format": "{asctime} {levelname} {message}",

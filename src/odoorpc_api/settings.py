@@ -1,17 +1,20 @@
+import os
 from pathlib import Path
 
 from dotenv import dotenv_values
 
 CORE_DIR = Path(__file__).parent
-BASE_DIR = CORE_DIR.parent
+
+USER_PROJECT_DIR = Path.cwd()
 
 DEFAULT_ENV_PATH = CORE_DIR / ".env.default"
-USER_ENV_PATH = BASE_DIR / ".env"
+USER_ENV_PATH = USER_PROJECT_DIR / ".env"
 
 default_config = dotenv_values(DEFAULT_ENV_PATH)
 user_config = dotenv_values(USER_ENV_PATH)
 
-merged_config = {**default_config, **user_config}
+merged_config = {**default_config, **user_config, **os.environ}
+
 
 
 class Env:
