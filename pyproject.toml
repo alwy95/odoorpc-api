@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=56.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "odoorpc-api"
+version = "0.1.0"
+authors = [{ name="Alwy", email="alwymourteza1@gmail.com" }]
+description = "OdooRPC API"
+readme = "README.md"
+requires-python = ">=3.8"
+
+dependencies = [
+    "fastapi[standard]==0.115.0",
+    "requests==2.32.3",
+    "python-dotenv==1.0.1"
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent"
+]
+
+[project.urls]
+"Homepage" = "https://github.com"
+
+[project.optional-dependencies]
+dev = ["ruff", "build", "twine", "pytest"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["tests*", ".pytest-cache*", ".ruff-cache*"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py38"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+ignore = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
