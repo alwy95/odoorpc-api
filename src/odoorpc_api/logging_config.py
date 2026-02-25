@@ -3,7 +3,7 @@ from pathlib import Path
 
 from uvicorn.config import LOGGING_CONFIG
 
-from core.settings import env
+from odoorpc_api.settings import env
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 LOG_FILE_PATH = os.path.join(BASE_DIR, "logs", "odooapi.log")

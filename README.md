@@ -88,11 +88,11 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from core.settings import env
-from core.exceptions import handling_exception
-from core.routes import handling_router
-from core.logging_config import LOGGING_CONFIG
-from core.middleware import LoggerMiddleware
+from odoorpc_api.settings import env
+from odoorpc_api.exceptions import handling_exception
+from odoorpc_api.routes import handling_router
+from odoorpc_api.logging_config import LOGGING_CONFIG
+from odoorpc_api.middleware import LoggerMiddleware
 
 
 app = FastAPI(
@@ -137,10 +137,10 @@ if __name__ == '__main__':
 from typing import Annotated
 from fastapi import APIRouter, Depends, status
 
-from core.jsonrpc import OdooEnv
-from core.params import PageParams
-from core.responses import PaginationResponse, ListResponse, SingleResponse, BaseResponse
-from core.types import ResponseMessage
+from odoorpc_api.jsonrpc import OdooEnv
+from odoorpc_api.params import PageParams
+from odoorpc_api.responses import PaginationResponse, ListResponse, SingleResponse, BaseResponse
+from odoorpc_api.types import ResponseMessage
 
 from .schema import PurchaseList, PurchaseUpdate, model, path
 
@@ -213,7 +213,7 @@ def delete(id: int, odoo = OdooEnv):
 ### Data Schemas
 `routes/purchase/schema.py`
 ```py
-from core.schemas import OdooBaseModel
+from odoorpc_api.schemas import OdooBaseModel
 
 
 path = '/purchase'

@@ -1,5 +1,5 @@
-from core.settings import env
-from core.utils import to_dict
+from odoorpc_api.settings import env
+from odoorpc_api.utils import to_dict
 
 
 class OdooService:
@@ -18,7 +18,7 @@ class OdooService:
         Internal wrapper to execute Odoo's 'execute_kw' RPC calls. 
         It automatically injects database name and credentials into the call.
         """
-        from core.jsonrpc import call
+        from odoorpc_api.jsonrpc import call
 
         return call(
             "object",

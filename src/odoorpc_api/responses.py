@@ -2,7 +2,7 @@ from typing import Generic, Optional, TypeVar
 
 from pydantic import BaseModel
 
-from core.types import ResponseStatus
+from odoorpc_api.types import ResponseStatus
 
 T = TypeVar("T")
 

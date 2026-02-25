@@ -6,8 +6,8 @@ import requests
 from fastapi import Depends, HTTPException, Request, Response, status
 from fastapi.security import HTTPBasic
 
-from core.services import OdooService
-from core.settings import env
+from odoorpc_api.services import OdooService
+from odoorpc_api.settings import env
 
 security = HTTPBasic()
 

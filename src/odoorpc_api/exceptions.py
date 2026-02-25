@@ -2,8 +2,8 @@ from fastapi import HTTPException, status
 from fastapi.exceptions import RequestValidationError, ResponseValidationError
 from fastapi.responses import JSONResponse
 
-from core.logger import log
-from core.types import ResponseStatus
+from odoorpc_api.logger import log
+from odoorpc_api.types import ResponseStatus
 
 
 def handling_exception(app):

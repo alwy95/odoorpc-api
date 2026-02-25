@@ -2,8 +2,8 @@ import time
 
 from starlette.middleware.base import BaseHTTPMiddleware
 
-from core.context import context
-from core.logger import log
+from odoorpc_api.context import context
+from odoorpc_api.logger import log
 
 
 class LoggerMiddleware(BaseHTTPMiddleware):

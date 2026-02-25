@@ -4,7 +4,7 @@ from urllib.parse import unquote_plus
 
 from uvicorn.config import LOGGING_CONFIG
 
-from core.context import context
+from odoorpc_api.context import context
 
 logging.config.dictConfig(LOGGING_CONFIG)
 

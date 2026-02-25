@@ -23,7 +23,7 @@ classifiers = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com"
+"Homepage" = "https://github.com/alwy95/odoorpc-api"
 
 [project.optional-dependencies]
 dev = ["ruff", "build", "twine", "pytest"]
